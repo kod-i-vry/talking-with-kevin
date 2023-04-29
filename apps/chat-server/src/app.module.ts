@@ -5,6 +5,9 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
 import { AppConfigService } from './config/config';
 import { LoggerMiddleware } from './middleware';
 import { UserModule } from './domain/user/user.module';
+import { DmModule } from './domain/dm/dm.module';
+import { ChannelModule } from './domain/channel/channel.module';
+import { WorkspaceModule } from './domain/workspace/workspace.module';
 
 @Module({
   imports: [
@@ -12,6 +15,9 @@ import { UserModule } from './domain/user/user.module';
       isGlobal: true,
     }),
     UserModule,
+    DmModule,
+    ChannelModule,
+    WorkspaceModule,
   ],
   controllers: [AppController],
   providers: [
